@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="static/css/style.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"> 
+        <strong>Message:<strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>  
+        {% endfor %}
+
+        <div class="container">
+            <form action="/signup" method="post">
+            {% csrf_token %}
+                <div class="box">
+                    <label class="fl fontLabel">Username</label>
+                        <div class="new iconBox">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="fr">
+                            <input class="textBox" type="text" id="username" name="username" placeholder="Create a username(letters only)" Required>
+                        </div>
+                        <div class="clr"></div>
+                    <br><br>
+                </div>
+
+                <div class="box">
+                    <label class="fl fontLabel">First name</label>
+                    <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    <div class="fr">
+                        <input class="textBox" type="text" id="fname" name="fname" placeholder="Enter First Name" Required>
+                    </div>
+                    <div class="clr"></div>
+                    <br><br>
+                </div>
+
+                <div class="box">
+                    <label class="fl fontLabel">Last name</label>
+                    <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+                    <div class="fr">
+                        <input class="textBox" type="text" id="lname" name="lname" placeholder="Enter Last Name" Required>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="box">
+                    <label class="fl fontLabel">Email</label>
+                    <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="fr">
+                        <input class="textBox" type="email" id="email" name="email" placeholder="Enter Email" Required>
+                    </div>
+                    <div class="clr"></div>
+                    <br><br>
+                </div>
+
+                <div class="box">
+                    <label class="fl fontLabel">Password</label>
+                    <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+    			    <div class="fr">
+                        <input class="textBox" type="password" id="pass1" name="pass1" placeholder="Password" Required>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="box">
+                    <label class="fl fontLabel">Confirm Password</label>
+                    <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+    			    <div class="fr">
+                        <input class="textBox" type="password" id="pass2" name="pass2" placeholder="Confirm Password" Required>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="box" style="background: #2d3e3f">
+                    <button class="submit" type="submit">Sign Up</button>
+                </div>
+
+            </form>
+        </div>
+        <script src="" async defer></script>
+    </body>
+</html>
